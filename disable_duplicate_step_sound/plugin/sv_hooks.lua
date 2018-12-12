@@ -1,4 +1,4 @@
---[[function PLUGIN:EntityEmitSound(soundData)
+function PLUGIN:EntityEmitSound(soundData)
 	if (!soundData.Entity:IsPlayer()) then
 		return;
 	end;
@@ -12,4 +12,3 @@
 		end;
 	end;
 end;
-]]
