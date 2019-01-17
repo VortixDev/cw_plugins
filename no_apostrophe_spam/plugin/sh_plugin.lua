@@ -1,10 +1,14 @@
 function PLUGIN:ClockworkSchemaLoaded()
+	if (Clockwork.database:Escape("'") != "''") then
+		return;
+	end;
+
 	Clockwork.database.oldEscape = Clockwork.database.Escape;
 
 	function Clockwork.database:Escape(text)
 		local initialEscapedString = Clockwork.database:oldEscape(text);
 		
-		if (Clockwork.database.liteSql) then
+		if (self.liteSql) then
 			return initialEscapedString:Replace("''", "'");
 		end;
 		
