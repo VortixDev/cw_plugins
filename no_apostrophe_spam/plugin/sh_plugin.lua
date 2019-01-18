@@ -1,4 +1,4 @@
-function PLUGIN:ClockworkSchemaLoaded()
+function PLUGIN:ClockworkInitialized()
 	if (Clockwork.database:Escape("'") != "''") then
 		return;
 	end;
