@@ -12,7 +12,7 @@ This plugin removes the issue of duplicated footstep sounds for those using cert
 
 Background: Clockwork provides a means to use NPC models as player models, by translating default player movement activities into those which are supported by various NPC models. With certain NPC models, there are default footstep sounds which automatically play when entities using that model take a step, which are not caught by the `PlayerFootstep` gamemode hook. Due to this, you hear both the footstep sound produced by the model, and that played by the gamemode. The cause of this issue was found with the help of Vizurez.
 
-This plugin takes advantage of the fact that the gamemode hook plays the footstep sound through `entityMeta.EmitSound` via sound path, whereas the model's step sound utilises a sound name. Step sounds have the suffix of `.stepleft` or `.stepright`, so the plugin such sounds when they originate from a player entity.
+This plugin takes advantage of the fact that the gamemode hook plays the footstep sound through `entityMeta.EmitSound` via sound path, whereas the model's step sound utilises a sound name. Step sound names have the suffix of `.stepleft` or `.stepright`, so the plugin blocks such sounds when they originate from a player entity.
 
 ## Disable NPC drops
 This plugin implements a config (labelled "Disable NPC Drops") which uses spawn flags to allow the disabling of medkit and weapon dropping by NPCs which are spawned by players.
